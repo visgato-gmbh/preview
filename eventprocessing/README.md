@@ -18,7 +18,7 @@ http://www.tothenew.com/blog/indoor-positioning-systemtrilateration/
 
 https://github.com/lemmingapex/Trilateration
 
-<pre>
+~~~xml
 <!-- https://mvnrepository.com/artifact/org.geotools/gt-referencing -->
 <dependency>
     <groupId>org.geotools</groupId>
@@ -26,7 +26,7 @@ https://github.com/lemmingapex/Trilateration
     <version>21.0</version>
 </dependency>
 </pre>
-
+~~~
 
 
 

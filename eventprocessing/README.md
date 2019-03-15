@@ -55,9 +55,35 @@ brew services start mosquitto
 
 
 ### sketch  
+apache flink stream data flow  
 <pre>
 |⎻⎻⎻⎻⎻⎻⎻⎻|         |⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻|         |⎻⎻⎻⎻⎻⎻⎻⎻|
 | source |  ---->  | transformation |  ---->  | sink   |
 |⎽⎽⎽⎽⎽⎽⎽⎽|         |⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽|         |⎽⎽⎽⎽⎽⎽⎽⎽|
 
+
+
+                   |⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻|         |⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻|
+|⎻⎻⎻⎻⎻⎻⎻⎻|  ---->  | db object |  ---->  | influxdb sink |
+| mqtt   |         |⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽|         |⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽|
+| source |
+|⎽⎽⎽⎽⎽⎽⎽⎽|  
+            ---->  |⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻|
+                   | calibration|
+                   |⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽|
+                         |
+                         ˅
+                   |⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻| 
+                   | slide time  |
+                   | window 1 min|
+                   | event 1 sec |
+                   |⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽|
+                         |
+                         ˅
+                    |⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻|         |⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻|
+                    | calculate |  ---->  | mqtt sink |
+                    |⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽|         |⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽⎽|
+
+
+ 
 </pre>

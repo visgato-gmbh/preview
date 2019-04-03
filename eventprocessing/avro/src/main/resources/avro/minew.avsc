@@ -1,0 +1,33 @@
+{
+	"namespace": "com.aiblab.data.avro.minewg1",
+	"name": "BleDataSet",
+	"type": "record",
+	"fields" : [
+		{ "name": "row", "type": { "type": "array", 
+		  "items": {
+		   "name": "BleData",
+		   "type": "record",
+			"fields": [
+			  { "name": "timestamp", "type": "string", "logicalType": "date" },
+			  { "name": "type", "type": 
+				{ "name":"MinewDataType", "type": "enum", 
+				 "symbols": ["iBeacon", "S1", "Unknown", "Gateway" ] }  },
+			  { "name": "mac", "type": "string" },
+			  { "name": "bleName", "type": ["null", "string"], "default":"null" },
+			  { "name": "ibeaconUuid", "type": ["null", "string"], "default":"null" },
+			  { "name": "ibeaconMajor", "type": [ "null", "int" ], "default": "null" },
+			  { "name": "ibeaconMinor", "type": [ "null", "int"], "default": "null" },
+			  { "name": "ibeaconTxPower", "type": [ "null", "int"], "default": "null" },
+			  { "name": "rssi", "type": ["null", "int"], "default":"null"  },
+			  { "name": "battery", "type": ["null", "int"], "default": "null" },
+			  { "name": "temperature", "type": ["null", "float"], "default": "null" },
+			  { "name": "humidity", "type": ["null", "float"], "default": "null" },
+			  { "name": "rawData", "type": ["null", "string"] , "default": "null" },
+			  { "name": "gatewayFree", "type": ["null", "int"], "default": "null" },
+			  { "name": "gatewayLoad", "type": ["null", "float"], "default": "null"  }
+			]
+		}
+		}
+	}
+	]
+}

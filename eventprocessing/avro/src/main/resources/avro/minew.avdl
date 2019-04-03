@@ -1,0 +1,6 @@
+@namespace("com.aiblab.avro.protocol.iot")
+protocol MinewProtocol {
+  import schema "minew.avsc";
+  
+  void put(array<com.aiblab.data.avro.minewg1.BleData> data);
+}
